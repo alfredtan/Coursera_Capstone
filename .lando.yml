@@ -1,0 +1,19 @@
+name: lando-coursera-capstone
+
+proxy:
+  python-cli:
+    - jupyterlabcapstone.lndo.site:8888
+
+services:
+  python-cli:
+    type: python:3.7
+    build:
+      - pip install jupyterlab
+    #port: 8888
+
+
+tooling:
+  pip:
+    service: python-cli
+  jupyter:
+    service: python-cli
